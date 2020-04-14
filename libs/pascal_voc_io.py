@@ -75,7 +75,7 @@ class PascalVocWriter:
         return top
 
     def addBndBox(self, xmin, ymin, xmax, ymax, name, difficult):
-        bndbox = {'xmin': xmin, 'ymin': ymin, 'xmax': xmax, 'ymax': ymax}
+        bndbox = {'xmin': xmin, 'ymin': ymin, 'xmax': xmax + xmin, 'ymax': ymax + ymin}
         bndbox['name'] = name
         bndbox['difficult'] = difficult
         self.boxlist.append(bndbox)
